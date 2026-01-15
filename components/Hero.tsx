@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
         });
       }
 
-      // Parallax Effect - używamy y zamiast yPercent dla lepszej kontroli
+      // Parallax Effect - using y instead of yPercent for better control
       if (imgRef.current) {
         gsap.to(imgRef.current, {
           y: '30%',
@@ -52,7 +52,7 @@ export const Hero: React.FC = () => {
 
   return (
     <section id="hero" ref={containerRef} className="h-screen relative flex items-center justify-center overflow-hidden bg-stone-bg">
-      {/* Wrapper dla obrazu - pozwala na parallax bez konfliktów */}
+      {/* Image wrapper - allows parallax without conflicts */}
       <div className="absolute inset-0 overflow-hidden">
         <img 
           ref={imgRef}
