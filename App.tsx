@@ -1,5 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Intro } from './components/Intro';
@@ -11,20 +13,18 @@ import { Footer } from './components/Footer';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { CookieBanner } from './components/CookieBanner';
 
+// Register GSAP Plugin SYNCHRONOUSLY - must happen before any component uses it
+gsap.registerPlugin(ScrollTrigger);
+
 const App: React.FC = () => {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
 
-  // Initialize Smooth Scroll (Lenis) with lazy loading
+  // Initialize Smooth Scroll (Lenis) - only Lenis is lazy loaded, not GSAP
   useEffect(() => {
     let lenisInstance: any;
-    let updateFunction: ((time: number) => void) | null = null;
     
     const initSmoothScroll = async () => {
       const Lenis = (await import('@studio-freight/lenis')).default;
-      const gsapModule = await import('gsap');
-      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-      
-      gsapModule.default.registerPlugin(ScrollTrigger);
       
       lenisInstance = new Lenis({
         duration: 1.2,
@@ -38,25 +38,19 @@ const App: React.FC = () => {
       lenisInstance.on('scroll', ScrollTrigger.update);
       
       // Use GSAP's ticker to drive Lenis animations
-      updateFunction = (time: number) => {
+      const update = (time: number) => {
         lenisInstance.raf(time * 1000);
       };
       
-      gsapModule.default.ticker.add(updateFunction);
-      gsapModule.default.ticker.lagSmoothing(0);
+      gsap.ticker.add(update);
+      gsap.ticker.lagSmoothing(0);
     };
     
-    // Delay init slightly for better FCP
+    // Small delay for better FCP, but GSAP is already available
     const timeout = setTimeout(initSmoothScroll, 50);
     
     return () => {
       clearTimeout(timeout);
-      if (updateFunction) {
-        // Dynamic import to ensure gsap is available for cleanup
-        import('gsap').then((gsapModule) => {
-          gsapModule.default.ticker.remove(updateFunction!);
-        });
-      }
       lenisInstance?.destroy();
     };
   }, []);
