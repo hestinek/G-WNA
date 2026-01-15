@@ -6,42 +6,42 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const galleryImages = [
   {
     id: 1,
-    src: "https://xefkawtkizopjyvkymhd.supabase.co/storage/v1/object/sign/Strona/webp%20galeria%20strony/pole-choinek-plantacja-soldany.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MGU3ZWQ4ZC1mZmVlLTQ5NTEtOThiNy0yZjZkYmYwOGRhNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdHJvbmEvd2VicCBnYWxlcmlhIHN0cm9ueS9wb2xlLWNob2luZWstcGxhbnRhY2phLXNvbGRhbnkud2VicCIsImlhdCI6MTc2ODAwMjg2OSwiZXhwIjoyMjQxMDQyODY5fQ.v5BHG5ZdYmhS0h3Hy7Ki3NRR9z2FAR52oj0QawW3F40",
+    src: "/pole-choinek-plantacja-soldany.webp",
     alt: "Świerki pospolite na polu",
     className: "md:col-span-4 md:row-span-2 h-[400px] md:h-[600px]",
     speed: 0.5 // Slow parallax
   },
   {
     id: 2,
-    src: "https://xefkawtkizopjyvkymhd.supabase.co/storage/v1/object/sign/Strona/webp%20galeria%20strony/choinka-swierka.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MGU3ZWQ4ZC1mZmVlLTQ5NTEtOThiNy0yZjZkYmYwOGRhNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdHJvbmEvd2VicCBnYWxlcmlhIHN0cm9ueS9jaG9pbmthLXN3aWVya2Eud2VicCIsImlhdCI6MTc2ODAwNzY2NiwiZXhwIjoyMjQxMDQ3NjY2fQ.YlgDt-bYj_lRr9J4HSvm09l4vSQd_Gp7pkYNtQpnT38",
+    src: "/choinka-swierka.webp",
     alt: "Detale choinki",
     className: "md:col-span-3 md:row-span-1 h-[300px] md:h-[400px] md:mt-20",
     speed: 1.2 // Fast parallax
   },
   {
     id: 3,
-    src: "https://xefkawtkizopjyvkymhd.supabase.co/storage/v1/object/sign/Strona/webp%20galeria%20strony/choinka-z-bliska-plantacja.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MGU3ZWQ4ZC1mZmVlLTQ5NTEtOThiNy0yZjZkYmYwOGRhNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdHJvbmEvd2VicCBnYWxlcmlhIHN0cm9ueS9jaG9pbmthLXotYmxpc2thLXBsYW50YWNqYS53ZWJwIiwiaWF0IjoxNzY4MDA3NjEyLCJleHAiOjIyNDEwNDc2MTJ9.CD7myzgJWlwhdhR-WmV88UGXJzJnfzJAVxZ2Dg8GKAg",
+    src: "/choinka-z-bliska-plantacja.webp",
     alt: "Mglisty poranek na plantacji choinek",
     className: "md:col-span-5 md:row-span-2 h-[400px] md:h-[550px]",
     speed: 0.8 // Medium parallax
   },
   {
     id: 4,
-    src: "https://xefkawtkizopjyvkymhd.supabase.co/storage/v1/object/sign/Strona/webp%20galeria%20strony/choinki-na-plantacji.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MGU3ZWQ4ZC1mZmVlLTQ5NTEtOThiNy0yZjZkYmYwOGRhNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdHJvbmEvd2VicCBnYWxlcmlhIHN0cm9ueS9jaG9pbmtpLW5hLXBsYW50YWNqaS53ZWJwIiwiaWF0IjoxNzY4MDAyOTM0LCJleHAiOjIyNDEwNDI5MzR9.tH7HfmWoGmeDejnQk6cq3qIumUvpD6NRhUg2oDzAc18",
+    src: "/choinki-na-plantacji.webp",
     alt: "Gęste drzewka świerka",
     className: "md:col-span-3 md:row-span-1 h-[300px] md:h-[450px] md:-mt-32",
     speed: 1.5 // Very fast parallax
   },
   {
     id: 5,
-    src: "https://xefkawtkizopjyvkymhd.supabase.co/storage/v1/object/sign/Strona/webp%20galeria%20strony/choinki-gizycko.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MGU3ZWQ4ZC1mZmVlLTQ5NTEtOThiNy0yZjZkYmYwOGRhNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdHJvbmEvd2VicCBnYWxlcmlhIHN0cm9ueS9jaG9pbmtpLWdpenlja28ud2VicCIsImlhdCI6MTc2ODAwMjk1OCwiZXhwIjoyMjQxMDQyOTU4fQ.a0EEMI-LbzEK1t3TaRdskiKT0fRdY8hLvoZdWgmTQHk",
+    src: "/choinki-gizycko.webp",
     alt: "Świerk srebrny",
     className: "md:col-span-4 md:row-span-1 h-[300px] md:h-[400px] md:mt-12",
     speed: 0.6 // Slow
   },
   {
     id: 6,
-    src: "https://xefkawtkizopjyvkymhd.supabase.co/storage/v1/object/sign/Strona/webp%20galeria%20strony/swierk-pospolity-choinki-gizycko.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MGU3ZWQ4ZC1mZmVlLTQ5NTEtOThiNy0yZjZkYmYwOGRhNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdHJvbmEvd2VicCBnYWxlcmlhIHN0cm9ueS9zd2llcmstcG9zcG9saXR5LWNob2lua2ktZ2l6eWNrby53ZWJwIiwiaWF0IjoxNzY4MDQzMDQ4LCJleHAiOjIyNDEwODMwNDh9.PYtfgsHARsO4s--bmxl1hKQHck5onQQiv2P3Pz9c7mI",
+    src: "/swierk-pospolity.webp",
     alt: "Rzędy choinek świątecznych na plantacji",
     className: "md:col-span-8 md:row-span-1 h-[300px] md:h-[400px] md:mt-12",
     speed: 0.9 // Medium
@@ -127,6 +127,8 @@ export const Gallery: React.FC = () => {
                 src={image.src} 
                 alt={image.alt}
                 className="w-full h-[120%] object-cover -translate-y-[10%] transition-transform duration-700 ease-out"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           ))}
