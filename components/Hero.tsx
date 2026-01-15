@@ -68,7 +68,7 @@ export const Hero: React.FC = () => {
         <img 
           ref={imgRef}
           src="/plantacja-choinek-soldany-hero3.webp" 
-          className="w-full h-[120%] object-cover object-center brightness-75"
+          className="absolute top-0 left-0 w-full h-[120%] object-cover object-center brightness-75"
           alt="Ośnieżone choinki"
           loading="eager"
           fetchPriority="high"
