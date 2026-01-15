@@ -17,6 +17,7 @@ const App: React.FC = () => {
   // Initialize Smooth Scroll (Lenis) with lazy loading
   useEffect(() => {
     let lenisInstance: any;
+    let updateFunction: ((time: number) => void) | null = null;
     
     const initSmoothScroll = async () => {
       const Lenis = (await import('@studio-freight/lenis')).default;
@@ -37,11 +38,11 @@ const App: React.FC = () => {
       lenisInstance.on('scroll', ScrollTrigger.update);
       
       // Use GSAP's ticker to drive Lenis animations
-      const update = (time: number) => {
+      updateFunction = (time: number) => {
         lenisInstance.raf(time * 1000);
       };
       
-      gsapModule.default.ticker.add(update);
+      gsapModule.default.ticker.add(updateFunction);
       gsapModule.default.ticker.lagSmoothing(0);
     };
     
@@ -50,6 +51,12 @@ const App: React.FC = () => {
     
     return () => {
       clearTimeout(timeout);
+      if (updateFunction) {
+        // Dynamic import to ensure gsap is available for cleanup
+        import('gsap').then((gsapModule) => {
+          gsapModule.default.ticker.remove(updateFunction!);
+        });
+      }
       lenisInstance?.destroy();
     };
   }, []);
