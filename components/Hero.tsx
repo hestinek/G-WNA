@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
         <img 
           ref={imgRef}
           src="/plantacja-choinek-soldany-hero3.webp" 
-          className="absolute top-0 left-0 w-full h-[130%] object-cover brightness-75"
+          className="absolute top-0 left-0 w-full h-[130%] object-cover brightness-75" // 130% height provides room for 30% parallax movement
           alt="Ośnieżone choinki"
           loading="eager"
           fetchPriority="high"
