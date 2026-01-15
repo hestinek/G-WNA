@@ -32,10 +32,10 @@ export const Hero: React.FC = () => {
         });
       }
 
-      // Parallax Effect
+      // Parallax Effect - using y instead of yPercent for better control
       if (imgRef.current) {
         gsap.to(imgRef.current, {
-          yPercent: 30,
+          y: '30%',
           ease: 'none',
           scrollTrigger: {
             trigger: containerRef.current,
@@ -52,17 +52,18 @@ export const Hero: React.FC = () => {
 
   return (
     <section id="hero" ref={containerRef} className="h-screen relative flex items-center justify-center overflow-hidden bg-stone-bg">
-      <img 
-        ref={imgRef}
-        src="/plantacja-choinek-soldany-hero3.webp" 
-        className="absolute inset-0 w-full h-full object-cover brightness-75 scale-110" // Started scaled up for parallax room
-        alt="Ośnieżone choinki"
-        loading="eager"
-        fetchPriority="high"
-        decoding="async"
-        width={1920}
-        height={1080}
-      />
+      {/* Image wrapper - allows parallax without conflicts */}
+      <div className="absolute inset-0 overflow-hidden">
+        <img 
+          ref={imgRef}
+          src="/plantacja-choinek-soldany-hero3.webp" 
+          className="absolute top-0 left-0 w-full h-[130%] object-cover brightness-75" // 130% height provides room for 30% parallax movement
+          alt="Ośnieżone choinki"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </div>
       
       <div ref={textRef} className="relative z-10 text-center text-white mix-blend-difference pointer-events-none">
         <h1 className="font-display text-[12vw] leading-none overflow-hidden">
