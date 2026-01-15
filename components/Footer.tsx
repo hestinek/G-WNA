@@ -40,9 +40,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
       {/* Background Texture - Reverted to clearer view */}
       <div className="absolute inset-0 z-0">
          <img 
-            src="https://xefkawtkizopjyvkymhd.supabase.co/storage/v1/object/sign/Strona/hero/plantacja-choinek-soldany-hero2.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MGU3ZWQ4ZC1mZmVlLTQ5NTEtOThiNy0yZjZkYmYwOGRhNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdHJvbmEvaGVyby9wbGFudGFjamEtY2hvaW5lay1zb2xkYW55LWhlcm8yLndlYnAiLCJpYXQiOjE3NjgwMDM2NTksImV4cCI6MjI0MTA0MzY1OX0.or4MHK0e7mYc__NOzWmmO7mDFSYGloiVlj3F2HuGVlM" 
+            src="/plantacja-choinek-soldany-hero3.webp" 
             className="w-full h-full object-cover brightness-50"
             alt="choinki świerka ośnieżone"
+            loading="lazy"
+            decoding="async"
          />
          <div className="absolute inset-0 bg-black/20" />
       </div>

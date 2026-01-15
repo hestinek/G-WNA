@@ -20,7 +20,7 @@ export const Hero: React.FC = () => {
           stagger: 0.1,
           duration: 1.5,
           ease: 'power4.out',
-          delay: 2.2 // Wait for loader
+          delay: 0.1 // Fast reveal without loader
         });
       }
 
@@ -28,7 +28,7 @@ export const Hero: React.FC = () => {
         gsap.to(subTextRef.current, {
           opacity: 1,
           duration: 1,
-          delay: 2.7
+          delay: 0.3 // Fast reveal without loader
         });
       }
 
@@ -54,9 +54,14 @@ export const Hero: React.FC = () => {
     <section id="hero" ref={containerRef} className="h-screen relative flex items-center justify-center overflow-hidden bg-stone-bg">
       <img 
         ref={imgRef}
-        src="https://xefkawtkizopjyvkymhd.supabase.co/storage/v1/object/sign/Strona/hero/plantacja-choinek-soldany-hero3.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MGU3ZWQ4ZC1mZmVlLTQ5NTEtOThiNy0yZjZkYmYwOGRhNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdHJvbmEvaGVyby9wbGFudGFjamEtY2hvaW5lay1zb2xkYW55LWhlcm8zLndlYnAiLCJpYXQiOjE3Njc5Nzk0MTAsImV4cCI6MjI0MTAxOTQxMH0.34fBq4yU-kein87MfL47ESvY96nyqTzhImECSrIO2sw" 
+        src="/plantacja-choinek-soldany-hero3.webp" 
         className="absolute inset-0 w-full h-full object-cover brightness-75 scale-110" // Started scaled up for parallax room
         alt="Ośnieżone choinki"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+        width={1920}
+        height={1080}
       />
       
       <div ref={textRef} className="relative z-10 text-center text-white mix-blend-difference pointer-events-none">

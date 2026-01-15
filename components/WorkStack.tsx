@@ -10,21 +10,21 @@ const projects: Project[] = [
     title: "ŚWIERK POSPOLITY",
     location: "PICEA ABIES",
     description: "Klasyczny zapach lasu. Symbol tradycyjnych świąt, charakteryzujący się stożkowym pokrojem i przyjemnym, żywicznym aromatem.",
-    imageUrl: "https://xefkawtkizopjyvkymhd.supabase.co/storage/v1/object/sign/Strona/work%20stacks/swierk-pospolity-picea-abies.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MGU3ZWQ4ZC1mZmVlLTQ5NTEtOThiNy0yZjZkYmYwOGRhNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdHJvbmEvd29yayBzdGFja3Mvc3dpZXJrLXBvc3BvbGl0eS1waWNlYS1hYmllcy53ZWJwIiwiaWF0IjoxNzY3OTc5NDk0LCJleHAiOjIyNDEwMTk0OTR9.Tkj9DQ1L0DYFknJW9EW1vXn_Fsa-8y4j6i-Dp5dllZU"
+    imageUrl: "/swierk-pospolity-picea-abies.webp"
   },
   {
     id: 2,
     title: "ŚWIERK SREBRNY",
     location: "PICEA PUNGENS",
     description: "Szlachetna barwa, sztywne igły, doskonała trwałość. Wyjątkowo odporny, o pięknym srebrzysto-niebieskim wybarwieniu igieł.",
-    imageUrl: "https://xefkawtkizopjyvkymhd.supabase.co/storage/v1/object/sign/Strona/work%20stacks/swierk-srebrny-picea-pungens.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MGU3ZWQ4ZC1mZmVlLTQ5NTEtOThiNy0yZjZkYmYwOGRhNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdHJvbmEvd29yayBzdGFja3Mvc3dpZXJrLXNyZWJybnktcGljZWEtcHVuZ2Vucy53ZWJwIiwiaWF0IjoxNzY3OTc5NTM2LCJleHAiOjIyNDEwMTk1MzZ9.EQl7W2aeYqEpFDgQdr0DYEaoQDdm9rD6Hj-YmcqZg58"
+    imageUrl: "/swierk-srebrny-picea-pungens.webp"
   },
   {
     id: 3,
     title: "ŚWIERK W DONICY",
     location: "PICEA ABIES/PICEA PUNGENS",
     description: "Żywe drzewka z systemem korzeniowym, gotowe do posadzenia. Ekologiczny wybór pozwalający cieszyć się drzewkiem przez lata.",
-    imageUrl: "https://xefkawtkizopjyvkymhd.supabase.co/storage/v1/object/sign/Strona/work%20stacks/choinki-w-donicy.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MGU3ZWQ4ZC1mZmVlLTQ5NTEtOThiNy0yZjZkYmYwOGRhNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdHJvbmEvd29yayBzdGFja3MvY2hvaW5raS13LWRvbmljeS53ZWJwIiwiaWF0IjoxNzY3OTc5NTYxLCJleHAiOjIyNDEwMTk1NjF9.gVkerXmvZi8NuOZnXu9KjqR3iev3qudp1Y_rqKUHMBo"
+    imageUrl: "/choinki-w-donicy.webp"
   }
 ];
 
@@ -139,6 +139,8 @@ export const WorkStack: React.FC = () => {
                   src={project.imageUrl} 
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
