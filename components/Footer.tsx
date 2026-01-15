@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
          <div className="absolute inset-0 bg-black/20" />
       </div>
 
-      <div ref={contentRef} className="relative z-10 w-full h-full max-w-[1600px] mx-auto px-4 md:px-12 py-6 md:py-12 flex flex-col justify-between min-h-screen">
+      <div ref={contentRef} className="relative z-10 w-full max-w-[1600px] mx-auto px-4 md:px-12 py-6 md:py-12 flex flex-col justify-between min-h-screen">
         
         {/* Top Spacer - mniejszy na mobile */}
         <div className="flex-none h-8 md:h-24" />
